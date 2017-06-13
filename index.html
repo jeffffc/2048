@@ -12,7 +12,7 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
-<body>
+<body onload="openNav();">
   <div class="container">
     <div class="heading">
       <h1 class="title">Mud9Bot - 2048</h1>
@@ -31,20 +31,15 @@
     <div id="myNav" class="overlay">
 
       <!-- Button to close the overlay navigation -->
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Start</a>
 
       <!-- Overlay content -->
       <div class="overlay-content">
-        <a href="#">About</a>
-        <a href="#">Services</a>
-        <a href="#">Clients</a>
-        <a href="#">Contact</a>
+        <a href="#">Testing by @Mud9Bot</a>
       </div>
 
     </div>
 
-    <!-- Use any element to open/show the overlay navigation menu -->
-    <span onclick="openNav()">open</span>
 
     <!--something-->
     <div class="game-container">
