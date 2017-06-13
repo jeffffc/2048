@@ -124,9 +124,18 @@ function closeNav() {
 </script>
 <script>
 $(document).ready(function(){
-    $.getJSON("http://date.jsontest.com/", function(result){
-      var json = require('config.json');
-      obj = JSON.parse(json);
+  var json = require('config.json');
+  obj = JSON.parse(json);
+  var qs = new Querystring();
+  var a = qs.get("user_id");
+  var b = qs.get("chat_id");
+  var c = qs.get("msgid");
+  var link = "http://api.telegram.org/bot" + obj.api_key + "/getGameHighScores";
+    $.getJSON(link, {
+      user_id = a,
+      chat_id = b,
+      message_id = c
+    }, function(result){
       $("#show-json").append("<p>")
         $.each(result, function(i, field){
             $("#show-json").append(i + ": " + field + "<br/>");
