@@ -134,8 +134,10 @@ function getQueryVariable(variable)
        return(false);
 }
 $(document).ready(function(){
-  var json = require('config.json');
-  obj = JSON.parse(json);
+  var api = $.getJSON("config.json", function(key) {
+    return key; // this will show the info it in firebug console
+  });
+  obj = JSON.parse(api);
   a = getQueryVariable("user_id");
   b = getQueryVariable("chat_id");
   c = getQueryVariable("msgid")
