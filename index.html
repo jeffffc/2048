@@ -134,6 +134,25 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+function sendNewScore(newscore){
+  $.getJSON("config.json", function(json) {
+        key = json.api_key; // access the first object proprty of the array
+  var link = "https://api.telegram.org/bot" + key + "/getGameHighScores";
+  a = getQueryVariable("user_id");
+  b = getQueryVariable("chat_id");
+  c = getQueryVariable("msgid")
+        $.post(link,
+        {
+          score: newscore,
+          user_id: a,
+          chat_id: b,
+          message_id: c
+        },
+        function(data,status){
+            console.log(status);
+        });
+      }
+    }
 $(document).ready(function(){
   var key = "";
   $.getJSON("config.json", function(json) {

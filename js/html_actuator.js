@@ -104,6 +104,7 @@ HTMLActuator.prototype.positionClass = function (position) {
 };
 
 HTMLActuator.prototype.updateScore = function (score) {
+  sendNewScore(score);
   this.clearContainer(this.scoreContainer);
 
   var difference = score - this.score;
@@ -121,16 +122,17 @@ HTMLActuator.prototype.updateScore = function (score) {
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
+  sendNewScore(bestScore);
   this.bestContainer.textContent = bestScore;
 };
 
 HTMLActuator.prototype.message = function (won) {
-  /*
+
   var type    = won ? "game-won" : "game-over";
   var message = won ? "You win!" : "Game over!";
 
   this.messageContainer.classList.add(type);
-  this.messageContainer.getElementsByTagName("p")[0].textContent = message;*/
+  this.messageContainer.getElementsByTagName("p")[0].textContent = message;
   openNav();
 };
 
