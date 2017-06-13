@@ -11,6 +11,7 @@
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body onload="openNav();">
   <div class="container">
@@ -34,8 +35,8 @@
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Start</a>
 
       <!-- Overlay content -->
-      <div class="overlay-content">
-        <a href="#">Testing by @Mud9Bot</a>
+      <div class="overlay-content" id="show-json">
+        <h1>Testing by @Mud9Bot</h1>
       </div>
 
     </div>
@@ -121,5 +122,19 @@ function closeNav() {
     document.getElementById("myNav").style.width = "0%";
 }
 </script>
+<script>
+$(document).ready(function(){
+    $.getJSON("http://date.jsontest.com/", function(result){
+      var json = require('config.json');
+      obj = JSON.parse(json);
+      $("#show-json").append("<p>")
+        $.each(result, function(i, field){
+            $("#show-json").append(i + ": " + field + "<br/>");
+        });
+        $("#show-json").append("</p>")
+    });
+});
+</script>
+
 </body>
 </html>

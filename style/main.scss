@@ -49,12 +49,12 @@ h1.title {
 /* The Overlay (background) */
 .overlay {
     /* Height & width depends on how you want to reveal the overlay (see JS below) */
-    height: 80%;
+    height: 100%;
     width: 0;
     position: fixed; /* Stay in place */
     z-index: 10; /* Sit on top */
     left: 0;
-    top: 20%;
+    top: 0%;
     background-color: rgb(0,0,0); /* Black fallback color */
     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -80,6 +80,30 @@ h1.title {
     transition: 0.3s; /* Transition effects on hover (color) */
 }
 
+.overlay h1 {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 48px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+/* When you mouse over the navigation p, change their color */
+.overlay h1:hover, .overlay h1:focus {
+    color: #f1f1f1;
+}
+.overlay p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+/* When you mouse over the navigation p, change their color */
+.overlay p:hover, .overlay p:focus {
+    color: #f1f1f1;
+}
 /* When you mouse over the navigation links, change their color */
 .overlay a:hover, .overlay a:focus {
     color: #f1f1f1;
