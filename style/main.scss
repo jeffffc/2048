@@ -73,7 +73,7 @@ h1.title {
 
 /* Position the content inside the overlay */
 .overlay-start {
-    position: relative;
+    position: fixed;
     top: 90%; /* 25% from the top */
     width: 100%; /* 100% width */
     height: 20%;
