@@ -112,6 +112,55 @@
     document.getElementById("myNav").style.width = "0%";
   }
   </script>
+  <script>
+  function getQueryVariable(variable)
+  {
+         var query = window.location.search.substring(1);
+         var vars = query.split("&");
+         for (var i=0;i<vars.length;i++) {
+                 var pair = vars[i].split("=");
+                 if(pair[0] == variable){return pair[1];}
+         }
+         return(false);
+  }
+  function sendNewScore(newscore){
+    $.getJSON("config.json", function(json) {
+          key = json.api_key; // access the first object proprty of the array
+    var link = "https://api.telegram.org/bot" + key + "/getGameHighScores";
+    a = getQueryVariable("user_id");
+    b = getQueryVariable("chat_id");
+    c = getQueryVariable("msgid")
+          $.post(link,
+          {
+            score: newscore,
+            user_id: a,
+            chat_id: b,
+            message_id: c
+          },
+          function(data,status){
+              console.log(status);
+          });
+        });
+      }
+  $(document).ready(function(){
+    var key = "";
+    $.getJSON("config.json", function(json) {
+          key = json.api_key; // access the first object proprty of the array
+
+    a = getQueryVariable("user_id");
+    b = getQueryVariable("chat_id");
+    c = getQueryVariable("msgid")
+    var link = "https://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "&message_id=" + c;
+      $.getJSON(link, function(result){
+        $("#show-json").append("<p>")
+          $.each(result.result, function(index, value){
+              $("#show-json").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
+          });
+          $("#show-json").append("</p>")
+      });
+      });
+  });
+  </script>
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
   <script src="js/animframe_polyfill.js"></script>
@@ -123,55 +172,7 @@
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
 
-<script>
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
-}
-function sendNewScore(newscore){
-  $.getJSON("config.json", function(json) {
-        key = json.api_key; // access the first object proprty of the array
-  var link = "https://api.telegram.org/bot" + key + "/getGameHighScores";
-  a = getQueryVariable("user_id");
-  b = getQueryVariable("chat_id");
-  c = getQueryVariable("msgid")
-        $.post(link,
-        {
-          score: newscore,
-          user_id: a,
-          chat_id: b,
-          message_id: c
-        },
-        function(data,status){
-            console.log(status);
-        });
-      }
-    }
-$(document).ready(function(){
-  var key = "";
-  $.getJSON("config.json", function(json) {
-        key = json.api_key; // access the first object proprty of the array
 
-  a = getQueryVariable("user_id");
-  b = getQueryVariable("chat_id");
-  c = getQueryVariable("msgid")
-  var link = "https://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "&message_id=" + c;
-    $.getJSON(link, function(result){
-      $("#show-json").append("<p>")
-        $.each(result.result, function(index, value){
-            $("#show-json").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
-        });
-        $("#show-json").append("</p>")
-    });
-    });
-});
-</script>
 
 </body>
 </html>
