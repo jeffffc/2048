@@ -137,7 +137,7 @@ $(document).ready(function(){
   var key = "";
   $.getJSON("config.json", function(json) {
         key = json.api_key; // access the first object proprty of the array
-    });
+
   a = getQueryVariable("user_id");
   b = getQueryVariable("chat_id");
   c = getQueryVariable("msgid")
@@ -148,6 +148,7 @@ $(document).ready(function(){
             $("#show-json").append(i + ": " + field + "<br/>");
         });
         $("#show-json").append("</p>")
+    });
     });
 });
 </script>
