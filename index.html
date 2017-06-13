@@ -141,7 +141,7 @@ $(document).ready(function(){
   a = getQueryVariable("user_id");
   b = getQueryVariable("chat_id");
   c = getQueryVariable("msgid")
-  var link = "http://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "message_id=" + c;
+  var link = "https://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "message_id=" + c;
     $.getJSON(link, function(result){
       $("#show-json").append("<p>")
         $.each(result, function(i, field){
