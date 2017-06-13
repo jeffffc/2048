@@ -148,7 +148,7 @@ hr {
 }
 .overlay-start {
     position: fixed;
-    top: 75%; /* 25% from the top */
+    top: 60%; /* 25% from the top */
     width: 100%; /* 100% width */
     height: 20%;
     text-align: center; /* Centered text/links */
