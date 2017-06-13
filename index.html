@@ -127,6 +127,7 @@ $(document).ready(function(){
   var json = require('config.json');
   obj = JSON.parse(json);
   var qs = new Querystring();
+  alert(qs);
   var a = qs.get("user_id");
   var b = qs.get("chat_id");
   var c = qs.get("msgid");
