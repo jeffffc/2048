@@ -16,7 +16,7 @@ $tile-color: #eee4da;
 $tile-gold-color: #edc22e;
 $tile-gold-glow-color: lighten($tile-gold-color, 15%);
 
-$game-container-margin-top: 40px;
+$game-container-margin-top: 20px;
 $game-container-background: #bbada0;
 
 $transition-speed: 100ms;
@@ -24,7 +24,7 @@ $transition-speed: 100ms;
 html, body {
   margin: 0;
   padding: 0;
-
+  overflow: hidden;
   background: #faf8ef;
   color: $text-color;
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
@@ -32,7 +32,7 @@ html, body {
 }
 
 body {
-  margin: 80px 0;
+  margin: 20px 0;
 }
 
 .heading {
@@ -126,6 +126,91 @@ h1.title {
   border: 2px;
 }
 
+/* The Overlay (background) */
+.overlay2 {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 15; /* Sit on top */
+    left: 0;
+    top: 0%;
+    background-color: rgb(255,255,255); /* Black fallback color */
+    background-color: rgba(255,255,255, 1); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay2-content {
+    position: relative;
+    top: 1%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    height: 60%;
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+.overlay2-content-inside{
+  position: relative;
+  top: 1%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: left; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  margin-left: 40px;
+  font-size: 14px;
+}
+.overlay2-content-inside p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* Position the content inside the overlay */
+.overlay2-start {
+    position: fixed;
+    top: 75%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    height: 20%;
+    text-align: center; /* Centered text/links */
+}
+/* The navigation links inside the overlay */
+.overlay2 a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #818181;
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay2 h1 {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 48px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay2 p {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+
+/* Position the close button (top right corner) */
+.overlay2 .closebtn {
+  position: relative;
+  text-align: center; /* Centered text/links */
+  font-size: 40px;
+  border: 2px;
+}
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
     .overlay a {font-size: 20px}
@@ -582,6 +667,7 @@ hr {
   $game-container-margin-top: 17px;
 
   html, body {
+    overflow: hidden;
     font-size: 15px;
   }
 
@@ -607,7 +693,7 @@ hr {
   }
 
   .heading {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   // Show intro and restart button side by side

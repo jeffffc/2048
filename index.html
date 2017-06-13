@@ -67,9 +67,6 @@
   <!--something-->
   <div id="myNav" class="overlay">
 
-    <!-- Button to close the overlay navigation -->
-
-
     <!-- Overlay content -->
     <div class="overlay-content" id="show-json">
       <h1>2048 @Mud9Bot</h1>
@@ -79,10 +76,30 @@
     <p></p>
     <p></p>
       <p><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">Start</a></p>
+      <p><a href="javascript:void(0)" class="closebtn" onclick="openInfo()">Info</a></p>
 
   </div>
 
+  <!--something-->
+  <div id="infoDiv" class="overlay2">
 
+    <!-- Overlay content -->
+    <div class="overlay2-content">
+      <h1>2048 @Mud9Bot Info <a href="javascript:void(0)" class="closebtn" onclick="closeInfo()">X</a></h1> 
+      <div class="overlay2-content-inside">
+      <p>
+      <strong class="important">How to play:</strong> <br/><i>Computer:</i> Use your <strong>arrow keys</strong> to move the tiles. <br/> <i>Mobile: </i> Move the tiles using your <strong>fingers</strong>. <br/> When two tiles with the same number touch, they <strong>merge into one!</strong>
+      <hr>
+      <strong class="important">Note:</strong> This site is <strong>NOT</strong> the official version of 2048. You can play the official one via <a href="http://git.io/2048">http://git.io/2048.</a>
+      <hr>
+      This is a clone of the 2048 game on <a href="http://t.me/Mud9Bot">Mud9Bot</a>. The original game is created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+      <hr>
+        Original Code: <a href="https://github.com/gabrielecirulli/2048">GitHub Page</a> <br/> License: <a href="https://github.com/jeffffc/2048/blob/master/LICENSE.txt">MIT</a>
+      </p>
+    </div>
+    </div>
+
+  </div>
     <!--something-->
     <div class="game-container">
 
@@ -127,30 +144,25 @@
       </div>
     </div>
 
-    <p class="game-explanation">
-      <strong class="important">How to play:</strong> <br/><i>Computer:</i> Use your <strong>arrow keys</strong> to move the tiles. <br/> <i>Mobile: </i> Move the tiles using your <strong>fingers</strong>. <br/> When two tiles with the same number touch, they <strong>merge into one!</strong>
-    </p>
-    <hr>
-    <p>
-    <strong class="important">Note:</strong> This site is <strong>NOT</strong> the official version of 2048. You can play the official one via <a href="http://git.io/2048">http://git.io/2048.</a>
-    </p>
-    <hr>
-    <p>
-    This is a clone of the 2048 game on <a href="http://t.me/Mud9Bot">Mud9Bot</a>. The original game is created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
-    </p>
-    <hr>
-    <p>
-      Original Code: <a href="https://github.com/gabrielecirulli/2048">GitHub Page</a> <br/> License: <a href="https://github.com/jeffffc/2048/blob/master/LICENSE.txt">MIT</a>
-    </p>
+
   </div>
 
   <script>
   function openNav() {
+    updateHighScores();
     document.getElementById("myNav").style.width = "100%";
   }
 
   function closeNav() {
     document.getElementById("myNav").style.width = "0%";
+  }
+
+  function openInfo() {
+    document.getElementById("infoDiv").style.width = "100%";
+  }
+
+  function closeInfo() {
+    document.getElementById("infoDiv").style.width = "0%";
   }
   </script>
   <script>
