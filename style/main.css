@@ -143,7 +143,13 @@ hr {
     text-align: center; /* Centered text/links */
     margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
 }
-
+.overlay-start {
+    position: relative;
+    bottom: 10%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    height: 20%;
+    text-align: center; /* Centered text/links */
+}
 /* The navigation links inside the overlay */
 .overlay a {
     padding: 8px;
@@ -187,8 +193,6 @@ hr {
 .overlay .closebtn {
   position: relative;
   text-align: center; /* Centered text/links */
-  top: 90%;
-  left: 50%;
   font-size: 40px;
   border: 2px;
 }
