@@ -185,11 +185,12 @@ hr {
 
 /* Position the close button (top right corner) */
 .overlay .closebtn {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    font-size: 40px;
-    margin: 2px;
+  position: relative;
+  text-align: center; /* Centered text/links */
+  top: 90%;
+  left: 50%;
+  font-size: 40px;
+  border: 2px;
 }
 
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
