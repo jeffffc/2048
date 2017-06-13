@@ -144,7 +144,7 @@ $(document).ready(function(){
   var link = "https://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "&message_id=" + c;
     $.getJSON(link, function(result){
       $("#show-json").append("<p>")
-        $.each(result, function(i, field){
+        $.each(result.result, function(index, value){
             $("#show-json").append(i + ": " + field + "<br/>");
         });
         $("#show-json").append("</p>")
