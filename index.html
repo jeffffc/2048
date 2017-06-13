@@ -145,7 +145,7 @@ $(document).ready(function(){
     $.getJSON(link, function(result){
       $("#show-json").append("<p>")
         $.each(result.result, function(index, value){
-            $("#show-json").append(index + ": " + value + "<br/>");
+            $("#show-json").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
         });
         $("#show-json").append("</p>")
     });
