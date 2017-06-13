@@ -103,6 +103,15 @@
     </p>
   </div>
 
+  <script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
+
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+  </script>
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
   <script src="js/animframe_polyfill.js"></script>
@@ -113,15 +122,7 @@
   <script src="js/local_storage_manager.js"></script>
   <script src="js/game_manager.js"></script>
   <script src="js/application.js"></script>
-  <script>
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-}
 
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}
-</script>
 <script>
 function getQueryVariable(variable)
 {
