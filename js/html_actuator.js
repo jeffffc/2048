@@ -25,6 +25,7 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
     self.updateBestScore(metadata.bestScore);
 
     if (metadata.terminated) {
+      sendNewScore(bestScore);
       if (metadata.over) {
         self.message(false); // You lose
       } else if (metadata.won) {
@@ -104,7 +105,6 @@ HTMLActuator.prototype.positionClass = function (position) {
 };
 
 HTMLActuator.prototype.updateScore = function (score) {
-  sendNewScore(score);
   this.clearContainer(this.scoreContainer);
 
   var difference = score - this.score;
@@ -122,7 +122,6 @@ HTMLActuator.prototype.updateScore = function (score) {
 };
 
 HTMLActuator.prototype.updateBestScore = function (bestScore) {
-  sendNewScore(bestScore);
   this.bestContainer.textContent = bestScore;
 };
 
