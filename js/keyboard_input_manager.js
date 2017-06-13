@@ -128,6 +128,8 @@ KeyboardInputManager.prototype.listen = function () {
 };
 
 KeyboardInputManager.prototype.restart = function (event) {
+  updateHighScores(metadata.score);
+  openNav();
   event.preventDefault();
   this.emit("restart");
 };
