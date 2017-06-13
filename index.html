@@ -47,6 +47,9 @@
       });
   }
   updateHighScores();
+  document.ontouchmove = function(e){
+    e.preventDefault();
+  }
   </script>
 </head>
 <body onload="openNav();">
@@ -85,7 +88,7 @@
 
     <!-- Overlay content -->
     <div class="overlay2-content">
-      <h1>2048 @Mud9Bot Info <a href="javascript:void(0)" class="closebtn" onclick="closeInfo()">X</a></h1> 
+      <h1>2048 @Mud9Bot Info <a href="javascript:void(0)" class="closebtn" onclick="closeInfo()">X</a></h1>
       <div class="overlay2-content-inside">
       <p>
       <strong class="important">How to play:</strong> <br/><i>Computer:</i> Use your <strong>arrow keys</strong> to move the tiles. <br/> <i>Mobile: </i> Move the tiles using your <strong>fingers</strong>. <br/> When two tiles with the same number touch, they <strong>merge into one!</strong>

@@ -5,11 +5,12 @@ html, body {
   background: #faf8ef;
   color: #776e65;
   overflow: hidden;
+
   font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px; }
 
 body {
-  margin: 20px 0; }
+  margin: 40px 0; }
 
 .heading:after {
   content: "";
