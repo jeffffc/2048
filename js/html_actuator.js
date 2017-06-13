@@ -31,6 +31,8 @@ HTMLActuator.prototype.actuate = function (grid, metadata) {
       } else if (metadata.won) {
         self.message(true); // You win!
       }
+      updateHighScores();
+      openNav();
     }
 
   });
@@ -132,7 +134,6 @@ HTMLActuator.prototype.message = function (won) {
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
-  openNav();
 };
 
 HTMLActuator.prototype.clearMessage = function () {

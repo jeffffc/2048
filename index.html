@@ -142,11 +142,10 @@
           });
         });
       }
-  $(document).ready(function(){
+  function updateHighScores(){
     var key = "";
     $.getJSON("config.json", function(json) {
           key = json.api_key; // access the first object proprty of the array
-
     a = getQueryVariable("user_id");
     b = getQueryVariable("chat_id");
     c = getQueryVariable("msgid")
@@ -159,7 +158,8 @@
           $("#show-json").append("</p>")
       });
       });
-  });
+  }
+  $(document).ready(updateHighScores);
   </script>
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
