@@ -134,10 +134,10 @@ function getQueryVariable(variable)
        return(false);
 }
 $(document).ready(function(){
-  var api = $.getJSON("config.json", function(key) {
-    return key; // this will show the info it in firebug console
-  });
-  obj = JSON.parse(api);
+  var key = "";
+  $.getJSON("config.json", function(json) {
+        key = json.api_key); // access the first object proprty of the array
+    });
   a = getQueryVariable("user_id");
   b = getQueryVariable("chat_id");
   c = getQueryVariable("msgid")
