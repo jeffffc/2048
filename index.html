@@ -12,6 +12,26 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+  function updateHighScores(){
+    var key = "";
+    $.getJSON("config.json", function(json) {
+          key = json.api_key; // access the first object proprty of the array
+    a = getQueryVariable("user_id");
+    b = getQueryVariable("chat_id");
+    c = getQueryVariable("msgid")
+    var link = "https://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "&message_id=" + c;
+      $.getJSON(link, function(result){
+        $("#show-json").append("<p>")
+          $.each(result.result, function(index, value){
+              $("#show-json").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
+          });
+          $("#show-json").append("</p>")
+      });
+      });
+  }
+  updateHighScores();
+  </script>
 </head>
 <body onload="openNav();">
   <div class="container">
@@ -159,7 +179,7 @@
       });
       });
   }
-  $(document).ready(updateHighScores);
+  
   </script>
   <script src="js/bind_polyfill.js"></script>
   <script src="js/classlist_polyfill.js"></script>
