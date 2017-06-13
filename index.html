@@ -123,14 +123,22 @@ function closeNav() {
 }
 </script>
 <script>
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+}
 $(document).ready(function(){
   var json = require('config.json');
   obj = JSON.parse(json);
-  var qs = new Querystring();
-  console.log(qs);
-  var a = qs.get("user_id");
-  var b = qs.get("chat_id");
-  var c = qs.get("msgid");
+  a = getQueryVariable("user_id");
+  b = getQueryVariable("chat_id");
+  c = getQueryVariable("msgid")
   var link = "http://api.telegram.org/bot" + obj.api_key + "/getGameHighScores";
     $.getJSON(link, {
       user_id = a,
