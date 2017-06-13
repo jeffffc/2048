@@ -111,7 +111,7 @@ h1.title {
 
 /* Position the close button (top right corner) */
 .overlay .closebtn {
-    position: relative;
+    position: absolute;
     top: 90%;
     left: 50%;
     font-size: 40px;
