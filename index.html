@@ -31,12 +31,13 @@
     b = getQueryVariable("chat_id");
     c = getQueryVariable("msgid")
     var link = "https://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "&message_id=" + c;
-      $.getJSON(link, function(result){
-        $("#show-json").append("<p>")
-          $.each(result.result, function(index, value){
-              $("#show-json").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
-          });
-          $("#show-json").append("</p>")
+    $.getJSON(link, function(result){
+      $("#show-json-span").empty();
+      $("#show-json-span").append("<p>");
+        $.each(result.result, function(index, value){
+            $("#show-json-span").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
+        });
+        $("#show-json-span").append("</p>");
       });
       });
   }
@@ -67,6 +68,7 @@
       <!-- Overlay content -->
       <div class="overlay-content" id="show-json">
         <h1>Testing by @Mud9Bot</h1>
+        <span id="show-json-span"></span>
       </div>
 
     </div>
@@ -181,11 +183,12 @@
     c = getQueryVariable("msgid")
     var link = "https://api.telegram.org/bot" + key + "/getGameHighScores?user_id=" + a + "&chat_id=" + b + "&message_id=" + c;
       $.getJSON(link, function(result){
-        $("#show-json").append("<p>")
+        $("#show-json-span").empty();
+        $("#show-json-span").append("<p>");
           $.each(result.result, function(index, value){
-              $("#show-json").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
+              $("#show-json-span").append(value.position + ": " + value.user.first_name + " - " + value.score + "<br/>");
           });
-          $("#show-json").append("</p>")
+          $("#show-json-span").append("</p>");
       });
       });
   }
