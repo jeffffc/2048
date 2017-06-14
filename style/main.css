@@ -140,6 +140,7 @@ hr {
 
 /* Position the content inside the overlay */
 .overlay-content {
+    overflow-y: scroll;
     position: relative;
     top: 2%; /* 25% from the top */
     width: 100%; /* 100% width */
@@ -166,7 +167,8 @@ hr {
 .overlay h1 {
     padding: 8px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 36px;
+    text-align: center; /* Centered text/links */
     color: #818181;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
@@ -176,7 +178,7 @@ hr {
     color: #f1f1f1;
 }
 .overlay p {
-    padding: 8px;
+  top: -20px;
     text-decoration: none;
     font-size: 36px;
     color: #818181;
@@ -196,7 +198,7 @@ hr {
 .overlay .closebtn {
   position: relative;
   text-align: center; /* Centered text/links */
-  font-size: 40px;
+  font-size: 30px;
   border: 2px;
 }
 /* The Overlay (background) */
@@ -216,6 +218,8 @@ hr {
 
 /* Position the content inside the overlay */
 .overlay2-content {
+    overflow-x: auto;
+    overflow-y: scroll;
     position: relative;
     top: 1%; /* 25% from the top */
     width: 90%; /* 100% width */

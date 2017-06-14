@@ -56,7 +56,6 @@ h1.title {
     z-index: 10; /* Sit on top */
     left: 0;
     top: 0%;
-    overflow:scroll;
     background-color: rgb(0,0,0); /* Black fallback color */
     background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
     overflow-x: hidden; /* Disable horizontal scroll */
@@ -65,6 +64,7 @@ h1.title {
 
 /* Position the content inside the overlay */
 .overlay-content {
+    overflow-y: scroll;
     position: relative;
     top: 10%; /* 25% from the top */
     width: 100%; /* 100% width */
@@ -94,7 +94,8 @@ h1.title {
 .overlay h1 {
     padding: 8px;
     text-decoration: none;
-    font-size: 24px;
+    font-size: 36px;
+    text-align: center; /* Centered text/links */
     color: #818181;
     display: block; /* Display block instead of inline */
     transition: 0.3s; /* Transition effects on hover (color) */
@@ -104,7 +105,7 @@ h1.title {
     color: #f1f1f1;
 }
 .overlay p {
-    padding: 8px;
+  top: -20px;
     text-decoration: none;
     font-size: 36px;
     color: #818181;
@@ -124,7 +125,7 @@ h1.title {
 .overlay .closebtn {
   position: relative;
   text-align: center; /* Centered text/links */
-  font-size: 40px;
+  font-size: 30px;
   border: 2px;
 }
 
@@ -145,6 +146,8 @@ h1.title {
 
 /* Position the content inside the overlay */
 .overlay2-content {
+    overflow-x: auto;
+    overflow-y: scroll;
     position: relative;
     top: 1%; /* 25% from the top */
     width: 90%; /* 100% width */
